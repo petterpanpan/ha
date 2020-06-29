@@ -1,128 +1,401 @@
-<html>
-<head>
-<title>��ӦͼƬ</title>
-<script>
-function SetWinHeight(obj)
-{
-var win=obj;
-if (document.getElementById)
-{
-if (win && !window.opera)
-{
-if (win.contentDocument && win.contentDocument.body.offsetHeight)
-win.height = win.contentDocument.body.offsetHeight;
-else if(win.Document && win.Document.body.scrollHeight)
-win.height = win.Document.body.scrollHeight;
-}
-}
-}
+<!DOCTYPE html>
+<html lang="zh-cn">
+ <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>游民文库</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/flat-ui.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/wenku.css"/>
+<link rel="shortcut icon" href="img/favicon.ico">
+<!--[if lt IE 9]>
+  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head><script type="application/ld+json"> { "@context": "https://schema.org", "@type": "Organization", "name": "Example", "url": "http://www.example.com", "logo": "http://www.example.com/images/logo.png" } </script>
+  <body id="wk-index">
+  	<div class="container-fluid wk-header">
+  		<div class="container">
+			<div class="col-xs-6">
+				<a href="/" title="游民文库">
+					<img alt="游民文库" class="wk-logo" src="img/logo.png"/>
+				</a>
+			</div>
+			<div class="col-xs-6">
+				<form class="pull-right" action="/search.html" target="_blank" method="get" role="search">
+					<div class="input-group input-group-lg">
+						<input type="text" required="required" name="wd" placeholder="请输入搜索关键字" class="form-control">
+						<span class="input-group-btn"><button type="submit" class="btn btn-default">游民搜索</button></span>
+					</div>
+				</form>
+			</div>
+	  	</div>
+  	</div>
+	<nav class="container-fluid navbar-inverse navbar navbar-default" role="navigation">
+		<div class="container">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="index.html">首页</a></li>
+				<li><a href="list.html">教育频道</a></li>
+				<li><a href="list.html">专业资料</a></li>
+				<li><a href="list.html">实用文档</a></li>
+				<li><a href="list.html">资格考试</a></li>
+				<li><a href="list.html">生活休闲</a></li>
+			</ul>
+			 <ul class="nav navbar-nav navbar-right">
+		      <li><a href="upload.html"><span class="fa fa-upload"></span> 上传文档</a></li>
+		      <li><a href="user.html"><span class="fa fa-user"></span> 会员中心</a></li>
+		    </ul>
+		</div>
+	</nav>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-9 wk-nopadding">
+				<div id="WkCarousel" class="carousel slide">
+					<ol class="carousel-indicators">
+						<li data-target="#WkCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#WkCarousel" data-slide-to="1"></li>
+						<li data-target="#WkCarousel" data-slide-to="2"></li>
+					</ol>   
+					<!-- 轮播（Carousel）项目 -->
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="img/banner1.jpg" alt="First slide">
+							<div class="carousel-caption">标题 1</div>
+						</div>
+						<div class="item">
+							<img src="img/banner2.jpg" alt="Second slide">
+							<div class="carousel-caption">标题 2</div>
+						</div>
+						<div class="item">
+							<img src="img/banner3.jpg" alt="Third slide">
+							<div class="carousel-caption">标题 3</div>
+						</div>
+					</div>
+					<!-- 轮播（Carousel）导航 -->
+					<a class="carousel-control left" href="#WkCarousel" data-slide="prev"><span class="fa fa-angle-left"></span></a>
+					<a class="carousel-control right" href="#WkCarousel" data-slide="next"><span class="fa fa-angle-right"></span></a>
+				</div> 
+			</div>
+			<div class="col-xs-3 wk-nopadding wk-pdl-15px">
+				<div class="panel panel-default text-center wk-noradius wk-noborder wk-count">
+					<div class="help-block">游民文库累计收录文档</div>
+					<span class="text-primary">9242132</span>
+				</div>
+				
+				
+				<div class="panel panel-default text-center wk-noradius clearfix wk-noborder hidden">
+					<div class="text-center row">
+						<div class="col-xs-5">
+							<a href="#" class="thumbnail wk-avatar"><img src="img/avatar.jpg"/></a>
+						</div>
+						<div class="col-xs-7 text-left wk-mgt-15px">
+							<div class="wk-username"><a href="#">皇虫</a> <small class="text-danger">V12</small></div>
+							<div class="help-block"><i class="fa fa-dollar"></i> <a href="#" class="text-muted">做任务，挣财富</a></div>
+						</div>
+						<div class="col-xs-10 col-lg-offset-1">
+							<div class="btn btn-block btn-success"><i class="fa fa-calendar"></i> 今日签到</div>
+							<!--<div class="btn btn-block btn-danger"><i class="fa fa-calendar-check-o"></i> 签到成功</div>-->
+						</div>
+					</div>
+					<div class="row wk-userinfo">
+						<div class="col-xs-4 wk-nopadding">
+							<div class="help-block">财富</div>
+							<a href="#" class="text-primary">888</a>
+						</div>
+						<div class="col-xs-4 wk-nopadding">
+							<div class="help-block">文档</div>
+							<a href="#" class="text-primary">430</a>
+						</div>
+						<div class="col-xs-4 wk-nopadding">
+							<div class="help-block">收藏</div>
+							<a href="#" class="text-primary">0</a>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="panel panel-default wk-loginbox">
+					<div class="panel-body">
+						<form action="#" method="post">
+							<div class="form-group">
+								<input type="text" placeholder="请输入登录用户名" name="username" class="form-control" value="" />
+							</div>
+							<div class="form-group">
+								<input type="password" placeholder="请输入登录密码" name="password" class="form-control" value="" />
+							</div>
+								<button type="button" class="btn btn-primary btn-block">登录文库</button>
+							<div class="help-block">
+								<a href="#">忘记密码？</a>
+								<a href="reg.html" class="pull-right">注册会员</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		
+	</div>
+
+	<div class="container-fluid wk-cate">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-3">
+					<div class="h5">资格考试</div>
+					<div class="wk-cate-list">
+						<a href="#">SAT考试</a>
+						<a href="#">ACT考试</a>
+						<a href="#">ACCA考试</a>
+						<a href="#">CFA考试</a>
+						<a href="#">CMA考试</a>
+						<a href="#">法律硕士</a>
+					</div>
+				</div>
+				<div class="col-xs-3">
+					<div class="h5">教育专区</div>
+					<div class="wk-cate-list">
+						<a href="#">初中题库 </a>
+						<a href="#">高中题库 </a>
+						<a href="#">高考题库 </a>
+						<a href="#">高考模拟 </a>
+						<a href="#">状元笔记 </a>
+						<a href="#">教师行为分析</a>
+					</div>
+				</div>
+				<div class="col-xs-3">
+					<div class="h5">专业资料</div>
+					<div class="wk-cate-list">
+						<a href="#">精品课程</a>
+						<a href="#">东京审判 </a>
+						<a href="#">学术专区 </a>
+						<a href="#">中国史话 </a>
+						<a href="#">医药健康专区 </a>
+						<a href="#">会议中心</a>
+					</div>
+				</div>
+				<div class="col-xs-3">
+					<div class="h5">实用文档</div>
+					<div class="wk-cate-list">
+						<a href="#">2016北京积分落户政策</a> 
+						<a href="#">哈佛经典讲堂 </a>
+						<a href="#">如何汇报工作获欣赏</a>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+
+	<div class="container">
+		
+		<div class="row wk-item">
+			<div class="col-xs-6">
+				<div class="panel panel-default wk-noborder">
+					<div class="panel-heading"><strong>热门推荐</strong>
+						<a href="list.html" class="pull-right text-muted">更多>></a>
+					</div>
+					<div class="panel-body">
+						<a href="#" class="col-xs-5 wk-nopadding">
+							<img src="img/cover-news1.png"/>
+						</a>
+						<div class="col-xs-7 wk-nopadding">
+							<ul>
+								<li><a href="#" class="wk-text-ellipsis">论述职场礼仪的重要性论述职场礼仪的重要性</a></li>
+								<li><a href="#" class="wk-text-ellipsis">论述职场礼仪的重要性</a></li>
+								<li><a href="#" class="wk-text-ellipsis">安卓平台成恶意软件泛滥区</a></li>
+								<li><a href="#" class="wk-text-ellipsis">互联网瞄准汽车经济</a></li>
+								<li><a href="#" class="wk-text-ellipsis">苹果指责美国政府收集隐私</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-xs-6 wk-mgl-15px">
+				<div class="panel panel-default wk-noborder">
+					<div class="panel-heading"><strong>教育频道</strong>
+						<a href="list.html" class="pull-right text-muted">更多>></a>
+					</div>
+					<div class="panel-body">
+						<a href="#" class="col-xs-5 wk-nopadding">
+							<img src="img/cover-news2.png"/>
+						</a>
+						<div class="col-xs-7 wk-nopadding">
+							<ul>
+								<li><a href="#" class="wk-text-ellipsis">论述职场礼仪的重要性论述职场礼仪的重要性</a></li>
+								<li><a href="#" class="wk-text-ellipsis">论述职场礼仪的重要性</a></li>
+								<li><a href="#" class="wk-text-ellipsis">安卓平台成恶意软件泛滥区</a></li>
+								<li><a href="#" class="wk-text-ellipsis">互联网瞄准汽车经济</a></li>
+								<li><a href="#" class="wk-text-ellipsis">苹果指责美国政府收集隐私</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>	
+		<div class="row wk-item">	
+			
+			<div class="col-xs-6">
+				<div class="panel panel-default wk-noborder">
+					<div class="panel-heading"><strong>专业资料</strong>
+						<a href="#" class="pull-right text-muted">更多>></a>
+					</div>
+					<div class="panel-body">
+						<a href="#" class="col-xs-5 wk-nopadding">
+							<img src="img/cover-news3.png"/>
+						</a>
+						<div class="col-xs-7 wk-nopadding">
+							<ul>
+								<li><a href="#" class="wk-text-ellipsis">论述职场礼仪的重要性论述职场礼仪的重要性</a></li>
+								<li><a href="#" class="wk-text-ellipsis">论述职场礼仪的重要性</a></li>
+								<li><a href="#" class="wk-text-ellipsis">安卓平台成恶意软件泛滥区</a></li>
+								<li><a href="#" class="wk-text-ellipsis">互联网瞄准汽车经济</a></li>
+								<li><a href="#" class="wk-text-ellipsis">苹果指责美国政府收集隐私</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-xs-6 wk-mgl-15px">
+				<div class="panel panel-default wk-noborder">
+					<div class="panel-heading"><strong>实用文档</strong>
+						<a href="#" class="pull-right text-muted">更多>></a>
+					</div>
+					<div class="panel-body">
+						<a href="#" class="col-xs-5 wk-nopadding">
+							<img src="img/cover-news4.png"/>
+						</a>
+						<div class="col-xs-7 wk-nopadding">
+							<ul>
+								<li><a href="#" class="wk-text-ellipsis">论述职场礼仪的重要性论述职场礼仪的重要性</a></li>
+								<li><a href="#" class="wk-text-ellipsis">论述职场礼仪的重要性</a></li>
+								<li><a href="#" class="wk-text-ellipsis">安卓平台成恶意软件泛滥区</a></li>
+								<li><a href="#" class="wk-text-ellipsis">互联网瞄准汽车经济</a></li>
+								<li><a href="#" class="wk-text-ellipsis">苹果指责美国政府收集隐私</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>	
+		<div class="row wk-item">		
+		
+			<div class="col-xs-6">
+				<div class="panel panel-default wk-noborder">
+					<div class="panel-heading"><strong>资格考试</strong>
+						<a href="#" class="pull-right text-muted">更多>></a>
+					</div>
+					<div class="panel-body">
+						<a href="#" class="col-xs-5 wk-nopadding">
+							<img src="img/cover-news5.png"/>
+						</a>
+						<div class="col-xs-7 wk-nopadding">
+							<ul>
+								<li><a href="#" class="wk-text-ellipsis">论述职场礼仪的重要性论述职场礼仪的重要性</a></li>
+								<li><a href="#" class="wk-text-ellipsis">论述职场礼仪的重要性</a></li>
+								<li><a href="#" class="wk-text-ellipsis">安卓平台成恶意软件泛滥区</a></li>
+								<li><a href="#" class="wk-text-ellipsis">互联网瞄准汽车经济</a></li>
+								<li><a href="#" class="wk-text-ellipsis">苹果指责美国政府收集隐私</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-xs-6 wk-mgl-15px">
+				<div class="panel panel-default wk-noborder">
+					<div class="panel-heading"><strong>生活休闲</strong>
+						<a href="#" class="pull-right text-muted">更多>></a>
+					</div>
+					<div class="panel-body">
+						<a href="#" class="col-xs-5 wk-nopadding">
+							<img src="img/cover-news6.png"/>
+						</a>
+						<div class="col-xs-7 wk-nopadding">
+							<ul>
+								<li><a href="#" class="wk-text-ellipsis">论述职场礼仪的重要性论述职场礼仪的重要性</a></li>
+								<li><a href="#" class="wk-text-ellipsis">论述职场礼仪的重要性</a></li>
+								<li><a href="#" class="wk-text-ellipsis">安卓平台成恶意软件泛滥区</a></li>
+								<li><a href="#" class="wk-text-ellipsis">互联网瞄准汽车经济</a></li>
+								<li><a href="#" class="wk-text-ellipsis">苹果指责美国政府收集隐私</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	
+	</div>
+
+
+
+
+	<div class="container-fluid wk-footer">
+    	<div class="container">
+    		<div class="row wk-flink">
+    			<div class="col-xs-12">
+    				<div><strong>友情链接</strong></div>
+    				<div class="help-block">
+    					<a href="#">微友网盘搜索</a>
+    					<a href="#">赛纷网</a>
+    					<a href="#">广西南宁游民网络科技</a>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <div class="container-fluid wk-footer-dark">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-xs-12 text-center wk-help">
+    				<a href="#">
+    					手机版
+    				</a>
+    				 | 
+    				 <a href="#">关于我们</a> | 
+    				 <a href="#">帮助中心</a> | 
+    				 <a href="#">搜职位</a> | 
+    				 <a href="#">招人才</a> | 
+    				 <a href="#">意见反馈</a> | 
+    				 <a href="#">合作共赢</a>
+    			</div>
+    			<div class="col-xs-12 text-center">
+    				联系地址：广西南宁西乡塘区火炬路17号金达花园   联系电话：0771-0000000
+    			</div>
+    			<div class="col-xs-12 text-center">
+    				©2016 Qianlima.it  桂ICP备16006940号-1
+    			</div>
+    			<div class="col-xs-12 text-center">
+    				广西南宁游民网络科技 版权所有
+    			</div>
+    			<div class="col-xs-12 text-center">
+    				Powered By 游民CMS
+    			</div>
+    		</div>
+    	</div>
+    </div>
+
+
+
+<script>(function(){var bp = document.createElement('script'); var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){ bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }else{ bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);})();
 </script>
-<body>
-<iframe width="100%" src="https://cn.bing.com" align="center" height="3000" id="win" name="win" onload="Javascript:SetWinHeight(this)" frameborder="0" scrolling="yes"></iframe>
-</body>
-<</span>script>
-(function(){
-????var?bp?=?document.createElement_x_x('script');
-????var?curProtocol?=?window.location.protocol.split(':')[0];
-????if?(curProtocol?===?'https')?{
-???????bp.src?=?'https://zz.bdstatic.com/linksubmit/push.js';???????
-????}
-????else?{
-???????bp.src?=?'http://push.zhanzhang.baidu.com/push.js';
-????}
-????var?s?=?document.getElementsByTagName("script")[0];
-???s.parentNode.insertBefore(bp,?s);
-})();
-</</span><script>
-import org.apache.http.HttpEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;??
-?private static final String BASE_URL = "https://www.baidu.com/s?wd=site:";? ?
-
-?? ?/**
-?? ? * ��ѯ��ַ�Ƿ���¼
-?? ? */
-
-?public Object getIncluded(String url) {
-?? ??? ?Map<String,Object> map = new HashMap<String, Object>();
-?? ??? ?boolean a = true;
-?? ??? ?a = true;
-?? ??? ?while (a) {
-?? ??? ??? ?String data = this.html(url);
-?? ??? ??? ?if(data.length()<2000){
-?? ??? ??? ??? ?System.out.println(data);
-?? ??? ??? ??? ?try {
-?? ??? ??? ??? ??? ?Thread.sleep(100);
-
-?? ??? ??? ??? ?} catch (InterruptedException e) {
-?? ??? ??? ??? ??? ?e.printStackTrace();
-?? ??? ??? ??? ?}
-?? ??? ??? ?}else{
-?? ??? ??? ?//�ҵ���ؽ����Լ
-?? ??? ??? ?String startLabel = "<span class=\"nums_text\">";
-?? ??? ??? ?String endLabel = "</span>";
-?? ??? ??? ?int start = data.indexOf(startLabel)+startLabel.length();
-?? ??? ??? ?int end = ?data.indexOf(endLabel,start);
-?? ??? ??? ?String Result = data.substring(start, end);
-
-?? ??? ??? ?String str = Result;
-?? ??? ??? ?str=str.trim();
-?? ??? ??? ?String str2="";
-?? ??? ??? ?if(str != null && !"".equals(str)){
-?? ??? ??? ??? ?for(int i=0;i<str.length();i++){
-?? ??? ??? ??? ??? ?if(str.charAt(i)>=48 && str.charAt(i)<=57){
-?? ??? ??? ??? ??? ??? ?str2+=str.charAt(i);
-?? ??? ??? ??? ??? ?}
-?? ??? ??? ??? ?}
-?? ??? ??? ?}
-?? ??? ??? ?map.put("number", str2);
-?? ??? ??? ?if("0".equals(str2)){map.put("type",false);}else{map.put("type",true);}
-?? ??? ??? ?a=false;
-?? ??? ??? ?}
-?? ??? ?}
-?? ??? ?return map;
-?? ?}
-
-?
-
-/**
-? ? ?* ����ٶ��������ҳ��������htmlԴ��
-? ? ?*/
-? ? private String html(String keywords) {
-? ? ? ? String html = null;
-? ? ? ? try {
-? ? ? ? ? ? String url = BASE_URL + keywords;
-? ? ? ? ? ? CloseableHttpClient client = HttpClients.createDefault();
-? ? ? ? ? ? HttpGet get = new HttpGet(url);
-? ? ? ? ? ? try {
-? ? ? ? ? ? ? ? get.addHeader("Accept-Language","*,*;q=0.9,zh-TW;q=0.9");
-? ? ? ? ? ? ? ? get.addHeader("User-Agent", "Chrome/77.0.3865.120 Safari/537.36");
-? ? ? ? ? ? ? ? CloseableHttpResponse response = client.execute(get);
-? ? ? ? ? ? ? ? HttpEntity entity = response.getEntity();
-? ? ? ? ? ? ? ? if (entity != null) {
-? ? ? ? ? ? ? ? ? ? html = EntityUtils.toString(entity);
-? ? ? ? ? ? ? ? }
-? ? ? ? ? ? ? ? EntityUtils.consume(entity);
-? ? ? ? ? ? } catch (IOException e) {
-? ? ? ? ? ? ? ? e.printStackTrace();
-? ? ? ? ? ? }
-? ? ? ? } catch (Exception e) {
-? ? ? ? ?? ?e.printStackTrace();
-? ? ? ? }
-? ? ? ? return html;
-? ? }
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Example",
-    "url": "http://www.example.com",
-    "logo": "http://www.example.com/images/logo.png"
-  }
-</script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
 </html>
